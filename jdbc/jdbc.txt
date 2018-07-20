@@ -1,0 +1,113 @@
+﻿jdbc操作步骤:★
+	1.数据库和表
+	2.创建一个项目
+	3.导入驱动jar包
+	4.编码:
+		注册驱动
+		获取连接
+		编写sql
+		创建预编译的语句执行者
+		设置参数
+		执行sql
+		处理结果
+		释放资源
+使用junit单元测试
+		要求:
+			1.方法是public void xxx(){}
+			2.在方法上添加 @Test
+			3.在@Test 按下 ctrl+1(快速锁定错误)
+			4.在方法上右键 run as  -->junit 就可以执行方法了.
+jdbc-api详解:
+	所有的包 都是 java.sql 或者 javax.sql
+	
+	DriverManager:管理了一组jdbc的操作 类
+		常用方法:
+			了解:注册驱动	
+				static void registerDriver(Driver driver) :
+					通过查看 com.mysql.jdbc.Driver的源码 有如下代码
+						 static {
+							try {
+								java.sql.DriverManager.registerDriver(new Driver());//这段代码我们已经写过
+							} catch (SQLException E) {
+								throw new RuntimeException("Can't register driver!");
+							}
+						}
+					驱动注册了两次.我们只需要将静态代码块执行一次,类被加载到内存中会执行静态代码块,并且只执行一次.
+					现在只需要将类加载到内存中即可:
+						方式1:
+							★Class.forName("全限定名");//包名+类名   com.mysql.jdbc.Driver
+						方式2:
+							类名.class;
+						方式3:
+							对象.getClass();
+ 
+			掌握:获取连接
+				static Connection getConnection(String url, String user, String password) 
+					参数1:告诉我们连接什么类型的数据库及连接那个数据库
+								协议:数据库类型:子协议 参数
+						mysql:	jdbc:mysql://localhost:3306/数据库名称
+						oracle:	jdbc:oracle:thin@localhost:1521@实例
+						
+					参数2:账户名 root
+					参数3:密码
+	
+	
+	(了解)Driver:java.sql 接口 驱动
+	Connection:连接 接口
+		常用方法:
+			获取语句执行者:
+				(了解)Statement createStatement() :获取普通的语句执行者  会出现sql注入问题
+				★PreparedStatement prepareStatement(String sql) :获取预编译语句执行者
+				(了解)CallableStatement prepareCall(String sql):获取调用存储过程的语句执行者
+
+			了解:
+				setAutoCommit(false) :手动开启事务
+				commit():提交事务
+				rollback():事务回滚
+	
+	Statement:语句执行者 接口
+	PreparedStatement:预编译语句执行者 接口
+		常用方法:
+			设置参数:
+				setXxx(int 第几个问号,Object 实际参数);
+					常见的方法:
+						 setInt
+						 setString
+						 setObject
+			
+			执行sql:
+				 ResultSet executeQuery() :执行 r 语句 返回值:结果集
+				 int executeUpdate() :执行cud 语句 返回值:影响的行数
+ 
+	
+	ResultSet:结果集 接口
+		执行查询语句之后返回的结果
+			常用方法:
+				boolean next():判断是否有下一条记录,若有返回true且将光标移到下一行,若没有呢则返回false
+					光标一开始处于第一条记录的上面
+				
+				获取具体内容
+					getXxx(int|string)
+						若参数为int :第几列
+						若参数为string:列名(字段名)
+					例如:
+						获取cname的内容可以通过
+							getString(2)
+							getString("cname")
+					常用方法:
+						getInt
+						getString 也可以获取int值
+						getObject 可以获取任意
+
+常见的配置文件格式:
+	1.properties
+		里面内容的格式 key=value
+	2.xml
+/////////////////
+若我们的配置文件为properties,并且放在src目录下.
+我们可以通过 ResourceBundle工具快速获取里面的配置信息
+	使用步骤:
+		1.获取ResourceBundle 对象:
+			static ResourceBundle getBundle("文件名称不带后缀名") 
+		2.通过ResourceBundle 对象获取配置信息 
+			String getString(String key) :通过执行key获取指定的value

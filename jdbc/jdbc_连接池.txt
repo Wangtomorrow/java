@@ -1,0 +1,57 @@
+﻿连接池概述:
+	管理数据库的连接,
+	作用:
+		提高项目的性能.
+	就是在连接池初始化的时候存入一定数量的连接,用的时候通过方法获取,不用的时候归还连接即可.
+	所有的连接池必须实现一个接口 javax.sql.DataSource接口
+	
+	获取连接方法:
+		Connection getConnection() 
+	归还连接的方法就是以前的释放资源的方法.调用connection.close();
+	
+常用连接池:
+	DBCP
+	C3P0
+
+
+DBCP:
+		apache组织
+		使用步骤:
+			1.导入jar包(commons-dbcp-1.4.jar和commons-pool-1.5.6.jar)
+			2.使用api
+				a.硬编码
+					//创建连接池
+					BasicDataSource ds = new BasicDataSource();
+					
+					//配置信息
+					ds.setDriverClassName("com.mysql.jdbc.Driver");
+					ds.setUrl("jdbc:mysql:///day07");
+					ds.setUsername("root");
+					ds.setPassword("1234");
+				b.配置文件
+					实现编写一个properties文件
+					//存放配置文件
+					Properties prop = new Properties();
+					prop.load(new FileInputStream("src/dbcp.properties"));
+					//设置
+					//prop.setProperty("driverClassName", "com.mysql.jdbc.Driver");
+					
+					//创建连接池
+					DataSource ds = new BasicDataSourceFactory().createDataSource(prop);
+C3P0:(★)
+		hibernate和spring使用
+		有自动回收空闲连接的功能.
+		使用步骤:
+			1.导入jar包(c3p0-0.9.1.2.jar)
+			2.使用api
+				a.硬编码(不推荐)
+					new ComboPooledDataSource()
+				b.配置文件
+					配置文件的名称:c3p0.properties 或者 c3p0-config.xml
+					配置文件的路径:src下
+				
+					编码只需要一句话
+						new ComboPooledDataSource()//使用默认的配置
+						new ComboPooledDataSource(String configName)//使用命名的配置 若配置的名字找不到,使用默认的配置
+						
+////////////////////////////
