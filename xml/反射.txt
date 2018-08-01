@@ -1,0 +1,21 @@
+﻿反射:
+	1.获取对应的class对象
+		方式1:★
+			Class clazz=Class.forName("全限定名");
+		方式2:
+			Class clazz=类名.class;
+		方式3:
+			Class clazz=对象.getClass();
+	2.通过class对象创建一个实例对象(相当于  new 类())
+		Object clazz.newInstance();
+	3.通过class对象获取一个方法(public修饰的)
+		Method method=clazz.getMethod("方法名",Class .... paramType);
+			paramType为参数的类型
+	4.让方法执行:
+		method.invoke(Object 实例对象,Object ... 参数);
+			Object 实例对象:以前调用方法的对象 就是a
+			Object ... 参数:该方法运行时需要的参数 就是 10和30
+		执行这个方法 相当于
+			a.add(10,30);
+		例如:
+			method.invoke(a,10,30)
