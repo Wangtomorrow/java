@@ -9,8 +9,6 @@ import javax.persistence.Table;
 
 /**
  * 单位基本信息表，用于存储单位基本信息，可以进行增删改查等操作 
- * 2018.7.5 
- * 段本庆
  */
 @Entity
 @Table(name = "unitbasicinformation")

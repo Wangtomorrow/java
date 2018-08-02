@@ -9,8 +9,6 @@ import javax.persistence.Table;
 
 /**
  * 柜员信息表，存储柜员信息，用于登陆。 
- * 2018.7.5 
- * 段本庆
  */
 @Entity
 @Table(name = "teller")

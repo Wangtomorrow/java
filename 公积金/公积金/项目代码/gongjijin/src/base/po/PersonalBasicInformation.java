@@ -9,10 +9,9 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.IndexColumn;
 
+
 /**
  * 个人基本信息表，用于存储个人公积金的基本信息 
- * 2018.7.5 
- * 段本庆
  */
 @Entity
 @Table(name = "personalbasicinformation")
