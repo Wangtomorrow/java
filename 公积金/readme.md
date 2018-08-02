@@ -1,0 +1,5 @@
+﻿住房公积金项目
+采用MVC模式
+Servlet作为控制器使用，所有用户请求都发送给Servlet，Servlet调用Model来处理用户请求，并调用JSP来呈现处理结果。
+JSP作为表现层，负责收集用户请求，呈现处理结果。
+在Model中，通过HibernateSessionFactory创建session，并创建Query对象执行hql语句进行相关操作。
