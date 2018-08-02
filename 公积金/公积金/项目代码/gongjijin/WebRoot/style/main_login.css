@@ -1,0 +1,27 @@
+@charset "utf-8";
+/* CSS Document */
+body{ margin:0; font-size:12px; font-family:"宋体","微软雅黑"; background:#FFF;}
+*{ margin:0; padding:0; list-style:none;}
+#warp{ width:100%;}
+/*header*/
+#header{ height:230px; background:url(../img/banner.jpg) no-repeat left top;}
+#header .text{ width:535px; height:50px; padding:56px 0 0 126px;}
+#header .text h1{ font-size:45px;}
+#header .text h3{ padding-top:10px; padding-left:10px; color:#FFF;}
+/*contents*/
+#contents{ width:1320px; height:300px; margin:0 auto; border-top:2px solid #0071ab; }
+#contents .all{ width:1320px; height:300px;  border-top: 2px solid #b4c0c4; margin-top:30px; ; }
+#contents .all .left{ height:480px;float:left; border-left:#c7cbcc solid 2px;}
+#contents .all .left .img{ width:800px; height:500px;}
+#contents .all .right{ height:480px; width:516px; float:left; border-right:#c7cbcc solid 2px; }
+#contents .all .right ul{ width:300px; height:300px; padding-left:100px; padding-top:180px;}
+#contents .all .right ul li{ width:200px; height:50px;}
+#contents .all .right ul li .button{ width:40px; height:25px; float:left;}
+#contents .all .right ul li .password{ margin-left:4px; }
+#contents .all .right ul li .button1{ width:40px; height:25px; flout:left; margin-left:8px;}
+/*footer*/
+
+
+
+
+

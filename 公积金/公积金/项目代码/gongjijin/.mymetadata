@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="gongjijin"
+  id="myeclipse.1530753849104"
+  context-root="/gongjijin"
+  j2ee-spec="5.0"
+  archive="gongjijin.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

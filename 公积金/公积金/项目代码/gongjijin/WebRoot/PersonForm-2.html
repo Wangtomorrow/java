@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>个人信息修改</title>
+</head>
+
+<body>
+<form>
+        	<table cellpadding="7" cellspacing="0" align="center" width="550">
+            	
+                <caption><h3>个人住房公积金开户申请表</h3></caption>
+                <tr>
+                	<td width="120">单位账号:</td>
+                    <td><input type="text" id="" ><span style="color:#F00;">&nbsp;*</span></td>                   
+                </tr>
+                <tr>
+                	<td>单位名称:</td>
+                    <td><input type="text" id="" value="泉阳泉" readonly="true"></td>
+                </tr>
+                <tr>
+                	<td>单位比例：</td>
+                    <td><input type="text" id="" value="8" readonly="true">%</td>
+                </tr>
+                <tr>
+                	<td>个人比例：</td>
+                    <td><input type="text" id="" value="8" readonly="true"><span style="color:#F00;">&nbsp;*</span></td>
+                </tr>
+                <tr>
+                	<td colspan="2" align="left"><input type="file" value="导入"></td>
+                </tr>
+                <tr>
+                	<td width="120">姓名:</td>
+                    <td><input type="text" id=""><span style="color:#F00;">&nbsp;*</span></td>
+                </tr>
+                <tr>
+                	<td>证件类型：</td>
+                    <td>
+                    	<select onblur="supportid()" >
+                        	<option id="text_fxAttribute" value="666">01.身份证</option>
+                            <option>02.军官证</option>
+                            <option>03.护照</option>
+                            <option>04.其他</option>
+                        </select>
+                        <span style="color:#F00; font-size:12px;">&nbsp;*&nbsp;目前仅支持01身份证</span>
+                    </td>
+                </tr>
+                <tr>
+                	<td>证件号码:</td>
+                    <td>
+                    	<input type="text" id="idcode"><span style="color:#F00;">&nbsp;*</span>
+                    </td>
+                </tr>
+                <tr>
+                	<td>缴存基数：</td>
+                    <td>
+                    	<input type="text" id=""><span style="color:#F00;">&nbsp;*</span>
+                    </td>
+                 </tr>
+                <tr>
+                	
+                	<td colspan="3" align="right">
+                    	<span style="color:#F00; text-align:left; font-size:12px;">&nbsp;*为必填项</span>
+                    	<input type="submit" class="sub" value="确认" onclick="check_submit()">
+                    	<input type="submit" class="sub1" value="打印">
+                    	<input type="reset" class="sub1" value="重置">
+                        
+                    </td>
+                </tr>
+            </table>
+     
+	</form>        	
+</body>
+</html>

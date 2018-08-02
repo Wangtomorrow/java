@@ -1,0 +1,27 @@
+@charset "utf-8";
+/* CSS Document */
+body{ margin:0; font-size:12px; font-family:"宋体","微软雅黑"; background:#FFF;}
+*{ margin:0; padding:0; border:0; list-style:none;}
+#warp{ width:100%;}
+/*header*/
+#header{ height:230px; background:url(../img/banner.jpg) no-repeat left top;}
+#header .text{ width:535px; height:50px; padding:56px 0 0 126px;}
+#header .text h1{ font-size:45px;}
+#header .text h3{ padding-top:10px; padding-left:10px; color:#FFF;}
+/*contents*/
+#contents{ width:1320px; height:300px; margin:0 auto; border-top:2px solid #0071ab; }
+#contents .all{ width:1320px; height:300px;  border-top: 2px solid #b4c0c4; margin-top:30px; ; }
+#contents .all .left{ height:480px;float:left; border-left:#c7cbcc solid 2px;}
+#contents .all .left .img{ width:800px; height:500px;}
+#contents .all .right{ height:480px; width:516px; float:left; border-right:#c7cbcc solid 2px;}
+#contents .all .right ul{ width:300px; height:300px; padding-left:130px; padding-top:50px;}
+#contents .all .right ul sub{ margin-top:10px;}
+#contents .all .right ul li .sub1 { width:230px; height:100px; background:url(../img/but1.gif) no-repeat left top;}
+#contents .all .right ul li .sub2{ width:230px; height:100px; background:url(../img/but3.gif) no-repeat left top; margin-top:5px;}
+#contents .all .right ul li .sub3{ width:230px; height:100px; background:url(../img/sub3.gif) no-repeat left top; margin-top:5px;}
+#contents .all .right ul li .kaihu{ width:230px; height:100px; background:url(../img/kaihu.gif) no-repeat left top; margin-top:5px;}
+/*footer*/
+
+
+
+
